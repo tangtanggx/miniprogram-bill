@@ -1,4 +1,6 @@
-<nav nav-type="search" />
+<web-view src="http://192.168.2.9:5173"/>
+
+<!-- <nav nav-type="search" />
 <view class="home-container">
   <view class="home-content">
     <t-tabs defaultValue="recommend">
@@ -45,4 +47,4 @@
     发布
   </t-button>
 </view>
-<t-message id="t-message" />
+<t-message id="t-message" /> --><!--  -->

@@ -1,0 +1,23 @@
+.date-selector-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.date-selector-trigger:active {
+  background: var(--bg-tertiary);
+}
+
+.date-selector-icon {
+  font-size: 16px;
+}
+
+.date-selector-value {
+  font-size: 14px;
+  color: var(--text-primary);
+}

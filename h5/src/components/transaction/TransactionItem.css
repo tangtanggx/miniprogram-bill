@@ -1,0 +1,85 @@
+.tx-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.tx-item:active {
+  background: var(--bg-tertiary);
+}
+
+.tx-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.tx-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.tx-category {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tx-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.tx-note {
+  color: var(--text-secondary);
+}
+
+.tx-account {
+  color: var(--text-tertiary);
+}
+
+.tx-date {
+  color: var(--text-tertiary);
+  margin-left: auto;
+}
+
+.tx-amount {
+  font-size: 16px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.tx-amount.expense {
+  color: #ef4444;
+}
+
+.tx-amount.income {
+  color: #22c55e;
+}
+
+.tx-amount.transfer {
+  color: #3b82f6;
+}
+
+.tx-amount.repayment {
+  color: #f59e0b;
+}
+
+.tx-amount.investment {
+  color: #8b5cf6;
+}

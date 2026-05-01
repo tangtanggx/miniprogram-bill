@@ -1,0 +1,231 @@
+.categories-page {
+  padding-bottom: 100px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.categories-search {
+  padding: 0 16px;
+}
+
+.categories-tabs {
+  margin-top: 4px;
+}
+
+.categories-list {
+  padding: 12px 16px;
+}
+
+.category-group {
+  margin-bottom: 16px;
+}
+
+.category-group .group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.group-header-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.group-icon {
+  font-size: 18px;
+}
+
+.category-group .group-count {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.group-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.category-grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 4px;
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  cursor: pointer;
+  transition: background 0.2s;
+  min-height: 64px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.category-grid-item:active {
+  background: var(--bg-tertiary);
+}
+
+/* 添加子分类按钮 */
+.category-grid-item.add-sub-btn {
+  border: 2px dashed var(--border-color);
+  background: transparent;
+}
+
+.category-grid-item.add-sub-btn:active {
+  background: var(--bg-secondary);
+}
+
+.add-icon {
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+}
+
+.cat-icon {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.cat-name {
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.categories-empty {
+  text-align: center;
+  padding: 60px 0;
+  color: var(--text-secondary);
+}
+
+/* 悬浮按钮 */
+.categories-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 90px;
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
+  cursor: pointer;
+  z-index: 100;
+}
+
+.categories-fab:active {
+  transform: scale(0.92);
+}
+
+/* ==================== 底部弹窗 ==================== */
+.categories-popup {
+  border-radius: 16px 16px 0 0 !important;
+  background: var(--bg-primary) !important;
+}
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.popup-cancel {
+  font-size: 14px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.popup-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.popup-confirm {
+  font-size: 14px;
+  color: #4f46e5;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.popup-body {
+  padding: 16px 20px 32px;
+  max-height: 55vh;
+  overflow-y: auto;
+}
+
+.popup-body .form-group {
+  margin-bottom: 16px;
+}
+
+.popup-body .form-group label {
+  display: block;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.popup-body .form-group input {
+  width: 100%;
+  height: 42px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.popup-body .form-group input:focus {
+  border-color: #4f46e5;
+}
+
+/* 图标网格 */
+.icon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.icon-item {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.icon-item:active {
+  transform: scale(0.9);
+}
+
+.icon-item.active {
+  border-color: #4f46e5;
+  background: rgba(79, 70, 229, 0.1);
+}

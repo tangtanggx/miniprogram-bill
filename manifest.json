@@ -1,0 +1,22 @@
+{
+  "name": "记账助手",
+  "short_name": "记账",
+  "description": "个人记账助手 - 支持6种交易方向、预算管理、周期记账、AI记账",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#4f46e5",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

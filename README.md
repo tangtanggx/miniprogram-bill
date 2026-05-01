@@ -4,7 +4,7 @@
 
 ## 模版功能预览
 
-### 首页
+### 首页2
 
 <div style="display: flex">
   <img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/home-1.png">

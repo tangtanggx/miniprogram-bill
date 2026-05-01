@@ -1,0 +1,605 @@
+/* ===== LoanDetail 贷款还款明细 ===== */
+
+.loan-detail {
+  padding: 16px;
+  background: #f5f6fa;
+  min-height: 100vh;
+}
+
+/* --- 贷款概览卡片 --- */
+.ld-overview {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  padding: 20px;
+  color: #fff;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.35);
+}
+
+.ld-overview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.ld-overview-name {
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ld-overview-method {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.ld-remaining-row {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.ld-remaining-label {
+  font-size: 12px;
+  opacity: 0.75;
+  margin-bottom: 4px;
+}
+
+.ld-remaining-value {
+  font-size: 32px;
+  font-weight: 700;
+  font-family: 'DIN Alternate', 'Helvetica Neue', monospace;
+}
+
+.ld-stats-row {
+  display: flex;
+  gap: 8px;
+}
+
+.ld-stat-item {
+  flex: 1;
+  text-align: center;
+  padding: 8px 4px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.ld-stat-label {
+  font-size: 11px;
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+.ld-stat-value {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'DIN Alternate', 'Helvetica Neue', monospace;
+}
+
+/* --- 信息卡片 --- */
+.ld-info-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.ld-info-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 14px;
+}
+
+.ld-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.ld-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ld-info-label {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.ld-info-value {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  font-family: 'DIN Alternate', 'Helvetica Neue', monospace;
+}
+
+.ld-info-value.highlight {
+  color: #667eea;
+}
+
+/* --- 还款明细表格 --- */
+.ld-schedule-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.ld-schedule-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.ld-schedule-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.ld-filter-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.ld-filter-tab {
+  padding: 5px 12px;
+  border-radius: 14px;
+  font-size: 12px;
+  color: #666;
+  background: #f5f6fa;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.ld-filter-tab.active {
+  background: #667eea;
+  color: #fff;
+}
+
+/* --- 表格 --- */
+.ld-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.ld-table thead th {
+  padding: 8px 6px;
+  text-align: center;
+  font-weight: 500;
+  color: #999;
+  font-size: 11px;
+  border-bottom: 1px solid #f2f3f5;
+  white-space: nowrap;
+}
+
+.ld-table tbody td {
+  padding: 10px 6px;
+  text-align: center;
+  color: #333;
+  border-bottom: 1px solid #f8f8f8;
+  font-family: 'DIN Alternate', 'Helvetica Neue', monospace;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.ld-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.ld-table tbody tr.paid {
+  opacity: 0.5;
+}
+
+.ld-table tbody tr.current {
+  background: #f0f3ff;
+}
+
+.ld-table .td-left {
+  text-align: left;
+}
+
+.ld-table .td-right {
+  text-align: right;
+}
+
+.ld-table .text-expense {
+  color: #ef4444;
+}
+
+.ld-table .text-income {
+  color: #10b981;
+}
+
+/* --- 汇总行 --- */
+.ld-table tfoot td {
+  padding: 10px 6px;
+  text-align: center;
+  font-weight: 600;
+  color: #333;
+  border-top: 1.5px solid #eee;
+  font-size: 13px;
+  background: #fafbfc;
+}
+
+/* --- 进度条 --- */
+.ld-progress-wrap {
+  margin-top: 12px;
+}
+
+.ld-progress-track {
+  height: 6px;
+  background: #f2f3f5;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.ld-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transition: width 0.3s;
+}
+
+.ld-progress-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 6px;
+}
+
+/* ===== 修改按钮 ===== */
+.ld-edit-btn {
+  padding: 4px 14px;
+  border-radius: 14px;
+  font-size: 12px;
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+  border: 1px solid rgba(102, 126, 234, 0.25);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ld-edit-btn:hover {
+  background: rgba(102, 126, 234, 0.2);
+}
+
+/* ===== 标题行（含修改按钮） ===== */
+.ld-info-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.ld-info-title-row .ld-info-title {
+  margin-bottom: 0;
+}
+
+/* ===== 自动计算标记 ===== */
+.ld-auto-badge {
+  display: inline-block;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: rgba(102, 126, 234, 0.12);
+  color: #667eea;
+  margin-left: 6px;
+  font-weight: 400;
+}
+
+/* ===== 快捷操作 ===== */
+.ld-quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ld-quick-btn {
+  flex: 1;
+  min-width: calc(33% - 8px);
+  padding: 10px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #666;
+  background: #f5f6fa;
+  border: 1px solid #eee;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.ld-quick-btn:hover {
+  background: #eef0f5;
+  border-color: #ddd;
+}
+
+.ld-quick-btn.primary {
+  background: rgba(102, 126, 234, 0.1);
+  border-color: rgba(102, 126, 234, 0.3);
+  color: #667eea;
+  font-weight: 500;
+}
+
+.ld-quick-btn.primary:hover {
+  background: rgba(102, 126, 234, 0.2);
+}
+
+/* ===== 编辑 Popup ===== */
+.ld-edit-popup {
+  padding: 0 0 0 0;
+}
+
+.ld-edit-header {
+  padding: 12px 20px 0;
+}
+
+.ld-edit-header .acct-popup-handle {
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
+  background: #e5e5e5;
+  margin: 0 auto 12px;
+}
+
+.ld-edit-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.ld-edit-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.ld-edit-close {
+  cursor: pointer;
+  color: #999;
+  padding: 4px;
+}
+
+.ld-edit-body {
+  padding: 12px 20px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.ld-edit-section {
+  margin-bottom: 16px;
+}
+
+.ld-edit-label {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.ld-edit-input-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.ld-edit-input-wrap:focus-within {
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.15);
+}
+
+.ld-edit-prefix {
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #999;
+  background: #fafbfc;
+  border-right: 1px solid #f0f0f0;
+}
+
+.ld-edit-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px 12px;
+  font-size: 15px;
+  color: #333;
+  background: transparent;
+  font-family: 'DIN Alternate', 'Helvetica Neue', monospace;
+}
+
+.ld-edit-suffix {
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #999;
+  background: #fafbfc;
+  border-left: 1px solid #f0f0f0;
+  white-space: nowrap;
+}
+
+.ld-edit-date {
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.ld-edit-date:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.15);
+}
+
+/* 已还期数模式切换 */
+.ld-auto-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ld-auto-btn {
+  padding: 6px 16px;
+  border-radius: 16px;
+  font-size: 13px;
+  color: #666;
+  background: #f5f6fa;
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ld-auto-btn.active {
+  background: #667eea;
+  color: #fff;
+  border-color: #667eea;
+}
+
+.ld-auto-hint {
+  width: 100%;
+  font-size: 11px;
+  color: #667eea;
+  margin-top: 4px;
+  padding-left: 4px;
+}
+
+/* 编辑 chips */
+.ld-edit-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ld-edit-chip {
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 12px;
+  color: #666;
+  background: #f5f6fa;
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ld-edit-chip.active {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  border-color: rgba(102, 126, 234, 0.4);
+  font-weight: 500;
+}
+
+/* 底部按钮 */
+.ld-edit-footer {
+  display: flex;
+  gap: 12px;
+  padding: 16px 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.ld-edit-btn-cancel {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #666;
+  background: #f5f6fa;
+  border: none;
+  cursor: pointer;
+}
+
+.ld-edit-btn-save {
+  flex: 1.5;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #fff;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* ===== 标题行按钮组 ===== */
+.ld-title-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ld-prepay-btn {
+  background: rgba(239, 68, 68, 0.08) !important;
+  border-color: rgba(239, 68, 68, 0.25) !important;
+  color: #ef4444 !important;
+}
+
+.ld-prepay-btn:hover {
+  background: rgba(239, 68, 68, 0.16) !important;
+}
+
+/* ===== 利率模式切换 ===== */
+.ld-rate-mode-toggle {
+  display: flex;
+  gap: 0;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e5e5e5;
+}
+
+.ld-rate-mode-btn {
+  flex: 1;
+  padding: 8px 4px;
+  font-size: 12px;
+  color: #666;
+  background: #fafbfc;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ld-rate-mode-btn:not(:last-child) {
+  border-right: 1px solid #e5e5e5;
+}
+
+.ld-rate-mode-btn.active {
+  background: #667eea;
+  color: #fff;
+}
+
+/* ===== 无限期限 ===== */
+.ld-infinite-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: #f5f6fa;
+  border: 1px solid #e5e5e5;
+  font-size: 14px;
+  color: #667eea;
+  font-weight: 500;
+  cursor: default;
+}

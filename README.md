@@ -4,7 +4,7 @@
 
 ## 模版功能预览
 
-### 首页2
+### 首页2法大师傅挖了发哦 
 
 <div style="display: flex">
   <img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/home-1.png">

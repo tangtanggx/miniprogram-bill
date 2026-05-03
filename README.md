@@ -1,70 +1,50 @@
-# TDesign 通用页面模板
+<br />
+<div align="center">
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/f97dc74fbf9af5d7b2b3d8bc0a4e91d4.png" alt="Logo" width="400">
 
-基于 TDesign 打造的通用页面模板，包含通用的登陆注册、个人中心、设置中心、信息流等等功能。
+  <h1 align="center">云开发电商模板</h1>
 
-## 模版功能预览
-
-### 首页2法大师傅挖了发哦 
-
-<div style="display: flex">
-  <img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/home-1.png">
-  <img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/home-2.png">
+  <p align="center">
+  一键创建零售商城
+    <br />
+  </p>
 </div>
 
-### 信息发布
+## 说明
 
-<img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/publish-1.png">
+本项目为云开发电商模板的小程序，提供首页、购物车、订单、个人中心、商品详情等页面。
 
-### 搜索页
+本项目默认使用体验数据运行，同时也能够使用真实数据。配置好云开发后端后，即可一键切换至真实数据。
 
-<img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/search-1.png">
+注：体验数据通过本地 Mock 数据实现。
 
-### 个人中心
-<div style="display: flex">
-  <img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/user-1.png">
-  <img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/user-2.png">
-  <img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/user-3.png">
+本项目的后端可前往<https://tcb.cloud.tencent.com/cloud-template/detail?appName=electronic-business&from=wxide_tcb_shop>安装。
+
+## 社区
+
+欢迎添加企微群沟通交流：
+
+<div>
+    <img src="https://qcloudimg.tencent-cloud.cn/raw/bbb904f6fd6da01aa677e8a31e37651d.jpg" style="width:30%;">
 </div>
 
+## 安装依赖
 
-### 设置中心
+1. 安装 npm 依赖
 
-<img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/setting-1.png">
-
-### 消息中心
-
-<img width="375" alt="image" src="https://tdesign.gtimg.com/miniprogram/template/message-1.png">
-
-
-## 开发预览
-### 目录结构（TODO: 生成目录结构树）
-
-
-### 在开发者工具中预览
-
-```bash
-# 安装项目依赖
+```shell
 npm install
-
 ```
 
-打开[微信开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)，导入整个项目，构建 npm 包，就可以预览示例了。
+ 如果安装失败，请检查是否有足够权限执行命令，或尝试用更高权限安装依赖：
 
-### 基础库版本
+ ```shell
+ sudo npm install
+ ```
 
-最低基础库版本`^2.6.5`
+2. 构建 npm
+点击微信开发者工具菜单栏中的「工具」->「构建 npm」
 
+## 运行小程序
 
-## 贡献成员
-
-<a href="https://github.com/TDesignOteam/tdesign-miniprogram-starter/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=TDesignOteam/tdesign-miniprogram-starter" />
-</a>
-
-## 反馈
-
-有任何问题，建议通过 [Github issues](https://github.com/TDesignOteam/tdesign-miniprogram-starter/issues) 反馈。
-
-## 开源协议
-
-TDesign 遵循 [MIT 协议](https://github.com/TDesignOteam/tdesign-miniprogram-starter/blob/main/LICENSE)。
+在微信开发者工具中导入本项目即可运行，若想配合后端运行完整应用，请前往<https://tcb.cloud.tencent.com/cloud-template/detail?appName=electronic-business&from=wxide_tcb_shop>安装。

@@ -1,41 +1,46 @@
 {
-  "name": "tdesign-miniprogram-starter",
-  "version": "0.0.2",
-  "main": "index.js",
+  "name": "tcb-cloudbase-shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "npx eslint ./ --no-eslintrc -c ./.eslintrc.js",
-    "lint:fix": "npm run lint:fix-eslint && npm run lint:fix-prettier",
-    "lint:fix-eslint": "eslint --ext .js,.ts ./ --max-warnings 0 --ignore-path .gitignore --ignore-path .eslintignore --fix",
-    "lint:fix-prettier": "prettier ./ --ignore-path .gitignore --ignore-path .eslintignore --ignore-path .prettierignore --write './**/*.{js,ts}' --ignore-unknown"
+    "lint": "eslint --cache --fix --ext .js",
+    "check": "node config/eslintCheck.js",
+    "prepare": "husky install",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
-  "keywords": [
-    "wechat",
-    "miniprogram",
-    "starter"
-  ],
-  "author": "leejim",
-  "license": "MIT",
-  "description": "a start-kit for wechat miniprogram powerby TDesign miniprogram",
-  "dependencies": {
-    "tdesign-miniprogram": "^1.11.2"
-  },
-  "devDependencies": {
-    "eslint": "^8.49.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-prettier": "^5.0.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
-    "prettier": "^3.0.2"
+  "author": "",
+  "license": "ISC",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "lint-staged": {
-    "{src,example,script}/**/*.{js,ts,wxml,html,json,less}": [
+    "*.{js, ts}": "eslint --cache --fix",
+    "*.{js,ts,wxml,html,json,css,less}": [
       "prettier --write"
-    ],
-    "**/*.{js,ts}": [
-      "eslint --fix"
     ]
+  },
+  "dependencies": {
+    "@cloudbase/wx-cloud-client-sdk": "^1.2.1",
+    "dayjs": "^1.9.3",
+    "tdesign-miniprogram": "^1.6.0",
+    "tslib": "^1.11.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "commitizen": "^4.3.0",
+    "conventional-changelog-cli": "^2.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^10.0.8",
+    "prettier": "^2.1.2"
   }
 }

@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "记账",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-toast": "tdesign-miniprogram/toast/toast",
+    "t-swipe-cell": "tdesign-miniprogram/swipe-cell/swipe-cell",
+    "t-dialog": "tdesign-miniprogram/dialog/dialog",
+    "t-empty": "tdesign-miniprogram/empty/empty",
+    "add-record-popup": "./components/add-record-popup/index"
+  }
+}

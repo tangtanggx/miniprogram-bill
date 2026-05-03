@@ -1,0 +1,73 @@
+<t-popup visible="{{visible}}" placement="bottom" bind:visible-change="onVisibleChange">
+  <view class="add-popup">
+    <view class="add-popup-header">
+      <view class="type-tabs">
+        <view class="type-tab {{addType === 'expense' ? 'active' : ''}}" data-type="expense" bind:tap="switchType">支出</view>
+        <view class="type-tab {{addType === 'income' ? 'active' : ''}}" data-type="income" bind:tap="switchType">收入</view>
+      </view>
+      <t-icon name="close" size="44rpx" bind:tap="onClose" />
+    </view>
+
+    <view class="add-popup-body">
+      <!-- 金额输入 -->
+      <view class="amount-input-wrap">
+        <text class="amount-prefix">¥</text>
+        <input
+          class="amount-input"
+          type="digit"
+          placeholder="0.00"
+          value="{{addAmount}}"
+          bindinput="onAmountInput"
+          adjust-position="{{false}}"
+        />
+      </view>
+
+      <!-- 分类选择 -->
+      <view class="category-grid">
+        <view
+          class="category-item {{addCategory === item.value ? 'selected' : ''}}"
+          wx:for="{{categories}}"
+          wx:key="value"
+          data-value="{{item.value}}"
+          bind:tap="onSelectCategory"
+        >
+          <view class="category-icon-wrap">
+            <t-icon name="{{item.icon}}" size="44rpx" />
+          </view>
+          <text class="category-label">{{item.label}}</text>
+        </view>
+      </view>
+
+      <!-- 日期和时间 -->
+      <view class="datetime-wrap">
+        <picker mode="date" value="{{addDate}}" bindchange="onDateChange">
+          <view class="datetime-item">
+            <t-icon name="calendar" size="40rpx" color="#666" />
+            <text class="datetime-text">{{addDate}}</text>
+            <t-icon name="chevron-right" size="32rpx" color="#ccc" />
+          </view>
+        </picker>
+        <picker mode="time" value="{{addTime}}" bindchange="onTimeChange">
+          <view class="datetime-item">
+            <t-icon name="time" size="40rpx" color="#666" />
+            <text class="datetime-text">{{addTime}}</text>
+            <t-icon name="chevron-right" size="32rpx" color="#ccc" />
+          </view>
+        </picker>
+      </view>
+
+      <!-- 备注 -->
+      <view class="note-input-wrap">
+        <t-input
+          placeholder="添加备注（可选）"
+          value="{{addNote}}"
+          bind:change="onNoteInput"
+          adjust-position="{{false}}"
+        />
+      </view>
+
+      <!-- 确认按钮 -->
+      <t-button theme="primary" size="large" block bind:tap="onConfirm" loading="{{submitting}}">{{isEdit ? '保存修改' : '确认记账'}}</t-button>
+    </view>
+  </view>
+</t-popup>
